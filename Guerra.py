@@ -1,3 +1,9 @@
+import os, sys, io
+input = lambda: sys.stdin.readline()[:-1]
+
+def imprimir(texto):
+    sys.stdout.write(str(texto) + "\n")
+
 quantidade = int(input())
 quad = [int(x) for x in input().split()]
 nlog = [int(x) for x in input().split()]
@@ -12,5 +18,4 @@ while(i < quantidade and j < quantidade):
         j += 1
     else:
         j += 1
-        
-print(resultado)
+imprimir(resultado)
