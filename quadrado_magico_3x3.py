@@ -1,8 +1,10 @@
 matriz = []
-n = int(input())
+n = 3
 for i in range(n):
-    linha = [int(x) for x in input().split()]
-    matriz.append(linha) 
+    linha = []
+    for i in range(n):
+        linha.append(int(input()))
+    matriz.append(linha)
 valor = sum(linha)
 soma_principal = soma_secundaria = 0
 acabou = False
@@ -16,11 +18,11 @@ for i in range(n):
         if(i + j == n - 1):
             soma_secundaria += matriz[i][j]
     if(soma_linha != valor or soma_coluna != valor):
-        print('0')
+        print('NAO')
         acabou = True
         break
 if(not acabou):
     if(soma_secundaria == valor and soma_principal == valor):
-        print(valor)
+        print('SIM')
     else:
-        print('0')
+        print('NAO')
