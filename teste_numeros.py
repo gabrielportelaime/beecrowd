@@ -1,4 +1,4 @@
-limite = 10001
+limite = 1001
 
 for i in range(1, limite):
     for j in range(i, limite):
