@@ -1,11 +1,11 @@
-import numpy as np
-import matplotlib.patches as patches
-import matplotlib.pyplot as plt
+valor = 100
+maior = 0
 
-heptagono = np.linspace(0, 2 * np.pi, 8)
-pontos = np.vstack((np.cos(heptagono), np.sin(heptagono))).transpose()
-
-plt.gca().add_patch(patches.Polygon(pontos, color = '.3'))
-plt.grid(True)
-plt.axis('scaled')
-plt.show()
+for i in range(1, valor):
+    for j in range(1, valor):
+        for k in range(1, valor):
+            for l in range(1, valor):
+                i =
+                conta = 8/((i+j+k+l)*(1/i+1/j+1/k+1/l))
+                if(conta >= maior):
+                    maior = conta
