@@ -7,11 +7,10 @@ def imprimir(texto):
 
 for _ in range(int(input())):
     respostas = 0
-    n, m, k = [int(x) for x in input().split()]
-    lista1 = [int(x) for x in input().split()]
-    lista2 = [int(x) for x in input().split()]
-    for i in range(n):
-        for j in range(m):
-            if(lista1[i] + lista2[j] <= k):
-                respostas += 1
+    vertices, arestas = [int(x) for x in input().split()]
+    grafo = []
+    linhas = {}
+    for i in range(arestas):
+        origem, destino, linha = [int(x) for x in input().split()]
+    origem, destino = [int(x) for x in input().split()]
     imprimir(respostas)
