@@ -1,5 +1,5 @@
 def alga_dif(numero, quantidade):
-    if(len(set(numero)) - len(numero) <= quantidade):
+    if(len(numero) - len(set(numero)) <= quantidade):
         return True
     return False
 
