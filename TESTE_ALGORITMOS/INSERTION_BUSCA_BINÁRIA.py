@@ -1,7 +1,7 @@
 import random
 import time
 
-def busca_binaria(lista , elemento):
+def adicionar_com_busca_binaria(lista , elemento):
     tamanho = len(lista)
     if(tamanho == 0):
         lista.append(elemento)
@@ -12,39 +12,42 @@ def busca_binaria(lista , elemento):
     elemento_do_meio = lista[indice_elemento_do_meio]
     encontrado = True
     while encontrado:
-        if comeco == fim:
-            if elemento_do_meio != elemento:
-                encontrado = False
-                return "Não aparece na lista"
-
-        elif elemento_do_meio == elemento:
-            return f"{elemento_do_meio} encontrado na posição {indice_elemento_do_meio}"
-
-        elif elemento_do_meio > elemento:
+        if(comeco == fim):
+            if(elemento_do_meio > elemento):
+                lista.insert(indice_elemento_do_meio - 1, elemento)
+                return lista
+            else:
+                lista.insert(indice_elemento_do_meio + 1, elemento)
+                return lista
+        elif(elemento_do_meio == elemento):
+            lista.insert(indice_elemento_do_meio, elemento)
+            return lista
+        elif(elemento_do_meio > elemento):
             nova_posicao = indice_elemento_do_meio - 1
             fim = nova_posicao
             indice_elemento_do_meio = (comeco + fim) // 2
             elemento_do_meio = lista[indice_elemento_do_meio]
-            if elemento_do_meio == elemento:
-                return f"{elemento_do_meio} encontrado na posição {indice_elemento_do_meio}"
-
-        elif elemento_do_meio < elemento:
+            if(elemento_do_meio == elemento):
+                lista.insert(indice_elemento_do_meio, elemento)
+                return lista
+        elif(elemento_do_meio < elemento):
             nova_posicao = indice_elemento_do_meio + 1
             comeco = nova_posicao
             fim = tamanho - 1
             indice_elemento_do_meio = (comeco + fim) // 2
             elemento_do_meio = lista[indice_elemento_do_meio]
-            if elemento_do_meio == elemento:
-                return f"{elemento_do_meio} encontrado na posição {indice_elemento_do_meio}"
+            if(elemento_do_meio == elemento):
+                lista.insert(indice_elemento_do_meio, elemento)
+                return lista
 
+def ordenar_busca_binaria(lista):
+    lista_ordenada = []
+    for elemento in lista:
+        lista_ordenada = adicionar_com_busca_binaria(lista_ordenada, elemento)
+        print(lista_ordenada)
 
-
-lista = [16 , 18 , 20 , 50 , 60 , 81 , 84 , 89]
-print(busca_binaria(lista , 81))
-print(busca_binaria(lista , 10))    
-
-# def ordenar_busca_binaria(lista):
-    
+lista = [100, 200, 8, 1, 10, 50 , 60 , 81 , 84 , 89]
+ordenar_busca_binaria(lista)
 
 # quantidade_numeros = 10000000
 # range_numeros = quantidade_numeros*100
