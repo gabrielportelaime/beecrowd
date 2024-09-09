@@ -6,7 +6,7 @@ while True:
     try:
         valor = int(input())
         if(valor >= 436273291):
-             sys.stdout.write("282")
+            sys.stdout.write("282")
         else:
             for i in range(0, len(vetor), 2):
                 if(valor < vetor[i]):
@@ -17,4 +17,3 @@ while True:
                     break
     except EOFError:
         break
-  
